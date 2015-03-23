@@ -1,0 +1,30 @@
+{
+	"name": "mediawiki/manifest-dependencies",
+	"type": "mediawiki-extension",
+	"description": "Provides feedback for operations planning requiring items on vehicle manifests (very specific to NASA JSC wikis).",
+	"keywords": [
+		"MediaWiki",
+		"Parser Function"
+	],
+	"homepage": "https://github.com/darenwelsh/ManifestDependencies",
+	"license": "GPL-2.0+",
+	"authors": [
+		{
+			"name": "Daren Welsh",
+			"email": "darenwelsh@gmail.com",
+			"role": "Developer"
+		}
+	],
+	"support": {
+		"irc": "irc://irc.freenode.net/mediawiki"
+	},
+	"require": {
+		"php": ">=5.3.0",
+		"mediawiki/parser-function-helper": "~0.1"
+	},
+	"autoload": {
+		"files" : [
+			"ManifestDependencies.php"
+		]
+	}
+}
