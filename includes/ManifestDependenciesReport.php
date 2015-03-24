@@ -18,7 +18,13 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       parent::__construct(
          $parser,
          'manifestdependenciesreport',
-         array( 'content' => '' ),
+         array( 'manifest mission' => '' ),
+         array( 'from page' => '' ),
+         array( 'item on manifest' => '' ),
+         array( 'manifest launch date' => '' ),
+         array( 'manifest dock date' => '' ),
+         array( 'dependency' => '' ),
+         array( 'dependency start date' => '' ),
          array()
       );
 
@@ -26,11 +32,13 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
 
    public function render ( \Parser &$parser, $params ) {
 
-      // $manifestMission = $params[‘manifest mission’];
-      // $fromPage = $params[‘from page’];
-      // $itemOnMission = $params[‘item on mission’];
-      // $manifestLaunchDate = $params[‘manifest launch date’];
-      // $dependency = $params[‘dependency’];
+      $manifestMission = $params['manifest mission'];
+      $fromPage = $params['from page'];
+      $itemOnMission = $params['item on manifest'];
+      $manifestLaunchDate = $params['manifest launch date'];
+      $manifestDockDate = $params['manifest dock date'];
+      $dependency = $params['dependency'];
+      $dependencyStartDate = $params['dependency start date'];
     
       // insert your logic here
       // don’t worry about how stuff gets into the params field
