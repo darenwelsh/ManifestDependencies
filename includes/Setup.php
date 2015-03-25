@@ -20,7 +20,7 @@ class Setup {
 	static function setupParserFunctions ( &$parser ) {
 			
 		$manifestdependenciesreport = new ManifestDependenciesReport( $parser );
-		// $manifestdependenciesreport->setupParserFunction();
+		$manifestdependenciesreport->setupParserFunction();
 
 		// always return true
 		return true;

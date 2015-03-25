@@ -16,16 +16,19 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
    public function __construct ( \Parser &$parser ) {
 
       parent::__construct(
-         $parser,
-         'manifestdependenciesreport',
-         array( 'manifest mission' => '' ),
-         array( 'from page' => '' ),
-         array( 'item on manifest' => '' ),
-         array( 'manifest launch date' => '' ),
-         array( 'manifest dock date' => '' ),
-         array( 'dependency' => '' ),
-         array( 'dependency start date' => '' ),
-         array()
+         $parser, // mediawiki parser object
+         'manifestdependenciesreport', // parser function name
+         array( // unnamed parameters (numeric index params)
+         ),
+         array( // named parameters AKA "named index params" (empty array)
+            'manifest mission'      => '1', //subobject
+            'from page'             => '2',
+            'item on manifest'      => '3',
+            'manifest launch date'  => '4',
+            'manifest dock date'    => '5',
+            'dependency'            => '6',
+            'dependency start date' => '7'
+         )
       );
 
    }
@@ -34,7 +37,7 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
 
       $manifestMission = $params['manifest mission'];
       $fromPage = $params['from page'];
-      $itemOnMission = $params['item on manifest'];
+      $itemOnManifest = $params['item on manifest'];
       $manifestLaunchDate = $params['manifest launch date'];
       $manifestDockDate = $params['manifest dock date'];
       $dependency = $params['dependency'];
@@ -44,9 +47,15 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       // don’t worry about how stuff gets into the params field
     
       // example:
-      $output = "this template returns manifest info from [[$manifestMission]] ";
+      $output = "<tr>";
     
-      $output .= "which is launching on $manifestLaunchDate";
+      $output .= "<td>[[$itemOnManifest]]</td>";
+      $output .= "<td>[[$fromPage]]</td>";
+      $output .= "<td>$manifestDockDate</td>";
+      $output .= "<td>[[$dependency]]</td>";
+      $output .= "<td>$dependencyStartDate</td>";
+
+      $output .= "</tr>";
     
       return $output;
       // return "";
