@@ -42,14 +42,26 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       $manifestDockDate = $params['manifest dock date'];
       $dependency = $params['dependency'];
       $dependencyStartDate = $params['dependency start date'];
-    
+   
+      $itemOnManifestList = explode ( "," , $itemOnManifest );
+
+      $itemOnManifestListModified = array_map (
+         function($e){ 
+            $eTrimmed = trim($e); 
+            return "[[$eTrimmed]]"; },
+         $itemOnManifestList
+      );
+
+
       // insert your logic here
       // don’t worry about how stuff gets into the params field
     
       // example:
       $output = "<tr>";
     
-      $output .= "<td>[[$itemOnManifest]]</td>";
+      $output .= "<td>";
+      $output .= implode (", ", $itemOnManifestListModified );
+      $output .= "; [[$itemOnManifest]]</td>";
       $output .= "<td>[[$fromPage]]</td>";
       $output .= "<td>$manifestDockDate</td>";
       $output .= "<td>[[$dependency]]</td>";
@@ -58,7 +70,6 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       $output .= "</tr>";
     
       return $output;
-      // return "";
 
    }
 
