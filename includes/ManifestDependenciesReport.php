@@ -33,6 +33,8 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
 
    }
 
+   // public function 
+
    public function render ( \Parser &$parser, $params ) {
 
       $manifestMission = $params['manifest mission'];
@@ -44,12 +46,19 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       $dependencyStartDate = $params['dependency start date'];
    
       $itemOnManifestList = explode ( "," , $itemOnManifest );
-
       $itemOnManifestListModified = array_map (
          function($e){ 
             $eTrimmed = trim($e); 
             return "[[$eTrimmed]]"; },
          $itemOnManifestList
+      );
+
+      $dependencyList = explode ( "," , $dependency );
+      $dependencyListModified = array_map (
+         function($e){ 
+            $eTrimmed = trim($e); 
+            return "[[$eTrimmed]]"; },
+         $dependencyList
       );
 
 
@@ -59,12 +68,10 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       // example:
       $output = "<tr>";
     
-      $output .= "<td>";
-      $output .= implode (", ", $itemOnManifestListModified );
-      $output .= "; [[$itemOnManifest]]</td>";
+      $output .= "<td>" . implode (",<br />", $itemOnManifestListModified ) . "</td>";
       $output .= "<td>[[$fromPage]]</td>";
       $output .= "<td>$manifestDockDate</td>";
-      $output .= "<td>[[$dependency]]</td>";
+      $output .= "<td>" . implode (",<br />", $dependencyListModified ) . "</td>";
       $output .= "<td>$dependencyStartDate</td>";
 
       $output .= "</tr>";
