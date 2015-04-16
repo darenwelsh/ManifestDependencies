@@ -26,8 +26,8 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
             'item on manifest'      => '3',
             'manifest launch date'  => '4',
             'manifest dock date'    => '5',
-            'dependency'            => '6',
-            'dependency start date' => '7'
+            'dependency'            => '6'
+            // 'dependency start date' => '7'
          )
       );
 
@@ -43,10 +43,17 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       $manifestLaunchDate = $params['manifest launch date'];
       $manifestDockDate = $params['manifest dock date'];
       $dependency = $params['dependency'];
-      $dependencyStartDate = $params['dependency start date'];
+      // $dependencyStartDate = $params['dependency start date'];
 
-      $dependencyArray = explode(',', $dependency);
-      $dependencyDateArray = explode(',', $dependencyStartDate);
+      $dependencyArray = explode(';', $dependency);
+      // $dependencyDateArray = explode(',', $dependencyStartDate);
+
+      // $i = 0;
+      foreach ($dependencyArray as &$value) {
+          $dependencies[] = explode(',', $value);
+      //     // $i++;
+      }
+      unset($value);
 
       // $i = 0;
       // foreach ($dependencyArray as &$value) {
@@ -55,14 +62,6 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       //     $i++;
       // }
       // unset($value);
-
-      $i = 0;
-      foreach ($dependencyArray as &$value) {
-          $dependencies[$i]['name'] = $value;
-          $dependencies[$i]['date'] = $dependencyDateArray[$i];
-          $i++;
-      }
-      unset($value);
 
       // $dependencies = array(
       //     "dependency" => "bar",
@@ -77,13 +76,13 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
          $itemOnManifestList
       );
 
-      $dependencyList = explode ( "," , $dependency );
-      $dependencyListModified = array_map (
-         function($e){ 
-            $eTrimmed = trim($e); 
-            return "[[$eTrimmed]]"; },
-         $dependencyList
-      );
+      // $dependencyList = explode ( "," , $dependency );
+      // $dependencyListModified = array_map (
+      //    function($e){ 
+      //       $eTrimmed = trim($e); 
+      //       return "[[$eTrimmed]]"; },
+      //    $dependencyList
+      // );
 
 #
 # VARIABLE DEFINITIONS
@@ -214,26 +213,49 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
 */
     
       // OUTPUT
-      $output = "$manifestMission; $fromPage; $itemOnManifest; $manifestLaunchDate; $manifestDockDate; $dependency; $dependencyStartDate;;";
+      // $output = "$manifestMission; $fromPage; $itemOnManifest; $manifestLaunchDate; $manifestDockDate; $dependency; $dependencyStartDate;;";
+      // $output = "";
+      // $output = "$manifestMission; $fromPage; $itemOnManifest; $manifestLaunchDate; $manifestDockDate; $dependencies@@";
 
-      $i = 0;
-      foreach ($dependencies as &$value) {
-               $output .= "Name:" . $dependencies[$i]['name'] . ";;Date:" . $dependencies[$i]['date'];
-               $i++;
-            }
-            unset($value);
+      // foreach ($dependencies as &$value) {
+      //          $output .= "Name:" . $value[0] . " Date:" . $value[1];
+      //       }
+      //       unset($value);
+
+      // $i = 0;
+      // foreach ($dependencies as &$value) {
+      //          $output .= "Name:" . $dependencies[$i]['name'] . ";;Date:" . $dependencies[$i]['date'];
+      //          $i++;
+      //       }
+      //       unset($value);
 
 
       // $output .= var_dump($dependencyArray);
       // $output .= var_export($dependencies);
 
-      $output .= "<tr>";
+      $output = "<tr>";
     
       $output .= "<td>" . implode (",<br />", $itemOnManifestListModified ) . "</td>";
       $output .= "<td>[[$fromPage]]</td>";
       $output .= "<td>$manifestDockDate</td>";
-      $output .= "<td>" . implode (",<br />", $dependencyListModified ) . "</td>";
-      $output .= "<td>$dependencyStartDate</td>";
+      // $output .= "<td>" . implode (",<br />", $dependencyListModified ) . "</td>";
+      // $output .= "<td>" . implode (",<br />", $dependencies ) . "</td>";
+      $output .= "<td>";
+
+      $i = 1;
+      foreach ($dependencies as &$value) {
+               $output .= "[[" . $value[0] . "]] (";
+                  if( $value[1] ){
+                     $output .= $value[1];
+                  }else{
+                     $output .= "no date";
+                  }
+               $output .= ")";
+         $i++;
+      }
+      unset($value);
+
+      $output .= "</td>";
 
       $output .= "</tr>";
     
