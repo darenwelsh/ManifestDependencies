@@ -26,7 +26,7 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
             'item on manifest'      => '3',
             'manifest launch date'  => '4',
             'manifest dock date'    => '5',
-            'dependency'            => '6'
+            'dependency'            => '6'  //dependency1,dependency1StartDate (Y-m-d);dependency2,dependency2StartDate (Y-m-d); ...
             // 'dependency start date' => '7'
          )
       );
@@ -43,30 +43,17 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       $manifestLaunchDate = $params['manifest launch date'];
       $manifestDockDate = $params['manifest dock date'];
       $dependency = $params['dependency'];
-      // $dependencyStartDate = $params['dependency start date'];
 
       $dependencyArray = explode(';', $dependency);
-      // $dependencyDateArray = explode(',', $dependencyStartDate);
 
-      // $i = 0;
       foreach ($dependencyArray as &$value) {
-          $dependencies[] = explode(',', $value);
-      //     // $i++;
+         $dependencyArray2 = explode(',', $value);
+         $dependencies[$dependencyArray2[1]] = $dependencyArray2[0];
       }
       unset($value);
 
-      // $i = 0;
-      // foreach ($dependencyArray as &$value) {
-      //     $dependencies[$i]['name'] = $value;
-      //     $dependencies[$i]['date'] = $dependencyDateArray[$i];
-      //     $i++;
-      // }
-      // unset($value);
-
-      // $dependencies = array(
-      //     "dependency" => "bar",
-      //     "date"       => "foo",
-      // );
+      //LOGIC TO SORT DEPENDENCIES (and dates) IN ASCENDING ORDER BY DATE WITH NULL LAST
+      ksort($dependencies);
    
       $itemOnManifestList = explode ( "," , $itemOnManifest );
       $itemOnManifestListModified = array_map (
@@ -76,13 +63,7 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
          $itemOnManifestList
       );
 
-      // $dependencyList = explode ( "," , $dependency );
-      // $dependencyListModified = array_map (
-      //    function($e){ 
-      //       $eTrimmed = trim($e); 
-      //       return "[[$eTrimmed]]"; },
-      //    $dependencyList
-      // );
+
 
 #
 # VARIABLE DEFINITIONS
@@ -217,20 +198,8 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       // $output = "";
       // $output = "$manifestMission; $fromPage; $itemOnManifest; $manifestLaunchDate; $manifestDockDate; $dependencies@@";
 
-      // foreach ($dependencies as &$value) {
-      //          $output .= "Name:" . $value[0] . " Date:" . $value[1];
-      //       }
-      //       unset($value);
 
-      // $i = 0;
-      // foreach ($dependencies as &$value) {
-      //          $output .= "Name:" . $dependencies[$i]['name'] . ";;Date:" . $dependencies[$i]['date'];
-      //          $i++;
-      //       }
-      //       unset($value);
-
-
-      // $output .= var_dump($dependencyArray);
+      // $output .= var_dump($newDependencies);
       // $output .= var_export($dependencies);
 
       $output = "<tr>";
@@ -243,10 +212,10 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       $output .= "<td>";
 
       $i = 1;
-      foreach ($dependencies as &$value) {
-               $output .= "[[" . $value[0] . "]] (";
-                  if( $value[1] ){
-                     $output .= $value[1];
+      foreach ($dependencies as $date => $name) {
+               $output .= "[[" . $name . "]] (";
+                  if( $date ){
+                     $output .= $date;
                   }else{
                      $output .= "no date";
                   }
