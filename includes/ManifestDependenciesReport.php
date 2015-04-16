@@ -45,15 +45,12 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       $dependency = $params['dependency'];
 
       $dependencyArray = explode(';', $dependency);
-
       foreach ($dependencyArray as &$value) {
          $dependencyArray2 = explode(',', $value);
          $dependencies[$dependencyArray2[1]] = $dependencyArray2[0];
       }
       unset($value);
-
-      //LOGIC TO SORT DEPENDENCIES (and dates) IN ASCENDING ORDER BY DATE WITH NULL LAST
-      ksort($dependencies);
+      ksort($dependencies); //sort by date
    
       $itemOnManifestList = explode ( "," , $itemOnManifest );
       $itemOnManifestListModified = array_map (
@@ -213,13 +210,16 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
 
       $i = 1;
       foreach ($dependencies as $date => $name) {
-               $output .= "[[" . $name . "]] (";
-                  if( $date ){
-                     $output .= $date;
-                  }else{
-                     $output .= "no date";
-                  }
-               $output .= ")";
+         $output .= "[[" . $name . "]] (";
+            if( $date ){
+               $output .= $date;
+            }else{
+               $output .= "no date";
+            }
+         $output .= ")";
+         if ( count($dependencies) > 1 ){
+            $output .= "<br />";
+         }
          $i++;
       }
       unset($value);
