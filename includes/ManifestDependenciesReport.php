@@ -7,6 +7,16 @@
  * @licence GNU GPL v3+
  */
 
+/* NOTES
+
+Ref https://github.com/jamesmontalvo3/MediaWiki-ApprovedRevs/blob/master/includes/ApprovedRevs_body.php#L597
+Learn how to query from within extension
+
+http://php.net/manual/en/datetime.format.php
+http://php.net/manual/en/function.date.php
+
+*/
+
 namespace ManifestDependencies;
 use ParserFunctionHelper\ParserFunctionHelper;
 

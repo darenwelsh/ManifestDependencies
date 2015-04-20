@@ -1,0 +1,1561 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.8/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.8/ http://www.mediawiki.org/xml/export-0.8.xsd" version="0.8" xml:lang="en">
+  <siteinfo>
+    <sitename>EVA Wiki</sitename>
+    <base>https://mod-dev2.jsc.nasa.gov/wiki/EVA/index.php?title=Main_Page</base>
+    <generator>MediaWiki 1.23.2</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">EVA Wiki</namespace>
+      <namespace key="5" case="first-letter">EVA Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="104" case="first-letter">Type</namespace>
+      <namespace key="105" case="first-letter">Type talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Manifest Dependencies</title>
+    <ns>0</ns>
+    <id>11837</id>
+    <revision>
+      <id>52536</id>
+      <timestamp>2014-11-21T16:44:55Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;This page automatically queries for all items listed in the manifest for [[Visiting Vehicles]] that are marked as &quot;Required for&quot;. The list is sorted chronologically by launch...&quot;</comment>
+      <text xml:space="preserve" bytes="776">This page automatically queries for all items listed in the manifest for [[Visiting Vehicles]] that are marked as &quot;Required for&quot;. The list is sorted chronologically by launch date. Items in red will not arrive until after the are needed. Items in yellow arrive between 1-14 days of being needed.
+
+
+&lt;h2&gt;Manifest&lt;/h2&gt;
+&lt;table class=&quot;wikitable smwtable sortable&quot;&gt;
+&lt;tr&gt;&lt;th&gt;Item on Manifest&lt;/th&gt;&lt;th&gt;Mission&lt;/th&gt;&lt;th&gt;Mission Dock Date&lt;/th&gt;&lt;th&gt;Required for&lt;/th&gt;&lt;th&gt;Dependency Start Date&lt;/th&gt;&lt;/tr&gt;
+{{#ask: [[Required for::+]] [[Has date::&gt; {{#time: d M Y | -1 day}} 12:00:00]] [[Has date::&lt; {{#time: d M Y | +36 months}} 12:00:00]]
+|?#=
+|?From page
+|?Has title
+|?Has date
+|?Required for
+|mainlabel=-
+|link=none
+|sort=Has date
+|format=template
+|template=Manifest dependencies
+}}
+&lt;/table&gt;</text>
+      <sha1>97fa38u0ts79ev38j3is4j5mj5qeta3</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52630</id>
+      <parentid>52536</parentid>
+      <timestamp>2014-11-25T16:09:47Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="780">This page automatically queries for all items listed in the manifest for [[Visiting Vehicles]] that are marked as &quot;Required for&quot;. The list is sorted chronologically by launch date. Items in red will not arrive until after the are needed. Items in yellow arrive between 1-14 days of being needed.
+
+
+&lt;h2&gt;Manifest&lt;/h2&gt;
+&lt;table class=&quot;wikitable smwtable sortable&quot;&gt;
+&lt;tr&gt;&lt;th&gt;Item on Manifest&lt;/th&gt;&lt;th&gt;Mission&lt;/th&gt;&lt;th&gt;Mission Dock Date&lt;/th&gt;&lt;th&gt;Required for&lt;/th&gt;&lt;th&gt;Dependency Start Date&lt;/th&gt;&lt;/tr&gt;
+{{#ask: [[Required for::+]] [[Has date::&gt; {{#time: d M Y | -1000 days}} 12:00:00]] [[Has date::&lt; {{#time: d M Y | +36 months}} 12:00:00]]
+|?#=
+|?From page
+|?Has title
+|?Has date
+|?Required for
+|mainlabel=-
+|link=none
+|sort=Has date
+|format=template
+|template=Manifest dependencies
+}}
+&lt;/table&gt;</text>
+      <sha1>tt3qqeqvhi7tirw7yw0kjqd6erqgono</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52812</id>
+      <parentid>52630</parentid>
+      <timestamp>2015-02-10T00:59:09Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="787">This page automatically queries for all items listed in the manifest for [[Visiting Vehicles]] that are marked as &quot;Required for&quot;. The list is sorted chronologically by launch date. Items in red will not arrive until after the are needed. Items in yellow arrive between 1-14 days of being needed.
+
+
+&lt;h2&gt;Manifest&lt;/h2&gt;
+&lt;table class=&quot;wikitable smwtable sortable&quot;&gt;
+&lt;tr&gt;&lt;th&gt;Item on Manifest&lt;/th&gt;&lt;th&gt;Mission&lt;/th&gt;&lt;th&gt;Mission Dock Date&lt;/th&gt;&lt;th&gt;Required for&lt;/th&gt;&lt;th&gt;Dependency Start Date&lt;/th&gt;&lt;/tr&gt;
+{{#ask: [[Required for::+]] [[Has date::&gt; {{#time: d M Y | -1000 days}} 12:00:00]] [[Has date::&lt; {{#time: d M Y | +36 months}} 12:00:00]]
+|?#=
+|?From page
+|?Has title
+|?Has launch date
+|?Required for
+|mainlabel=-
+|link=none
+|sort=Has date
+|format=template
+|template=Manifest dependencies
+}}
+&lt;/table&gt;</text>
+      <sha1>4prb9y4k54klmicusv7yjidkjpszfsr</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52817</id>
+      <parentid>52812</parentid>
+      <timestamp>2015-02-10T01:30:58Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="801">This page automatically queries for all items listed in the manifest for [[Visiting Vehicles]] that are marked as &quot;Required for&quot;. The list is sorted chronologically by launch date. Items in red will not arrive until after the are needed. Items in yellow arrive between 1-14 days of being needed.
+
+
+&lt;h2&gt;Manifest&lt;/h2&gt;
+&lt;table class=&quot;wikitable smwtable sortable&quot;&gt;
+&lt;tr&gt;&lt;th&gt;Item on Manifest&lt;/th&gt;&lt;th&gt;Mission&lt;/th&gt;&lt;th&gt;Mission Dock Date&lt;/th&gt;&lt;th&gt;Required for&lt;/th&gt;&lt;th&gt;Dependency Start Date&lt;/th&gt;&lt;/tr&gt;
+{{#ask: [[Required for::+]] [[Has launch date::&gt; {{#time: d M Y | -1000 days}} 12:00:00]] [[Has launch date::&lt; {{#time: d M Y | +36 months}} 12:00:00]]
+|?#=
+|?From page
+|?Has title
+|?Has launch date
+|?Required for
+|mainlabel=-
+|link=none
+|sort=Has date
+|format=template
+|template=Manifest dependencies
+}}
+&lt;/table&gt;</text>
+      <sha1>mn843haama3qnkhc8wzdlgzuwtf8245</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52818</id>
+      <parentid>52817</parentid>
+      <timestamp>2015-02-10T01:32:33Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="808">This page automatically queries for all items listed in the manifest for [[Visiting Vehicles]] that are marked as &quot;Required for&quot;. The list is sorted chronologically by launch date. Items in red will not arrive until after the are needed. Items in yellow arrive between 1-14 days of being needed.
+
+
+&lt;h2&gt;Manifest&lt;/h2&gt;
+&lt;table class=&quot;wikitable smwtable sortable&quot;&gt;
+&lt;tr&gt;&lt;th&gt;Item on Manifest&lt;/th&gt;&lt;th&gt;Mission&lt;/th&gt;&lt;th&gt;Mission Dock Date&lt;/th&gt;&lt;th&gt;Required for&lt;/th&gt;&lt;th&gt;Dependency Start Date&lt;/th&gt;&lt;/tr&gt;
+{{#ask: [[Required for::+]] [[Has launch date::&gt; {{#time: d M Y | -1000 days}} 12:00:00]] [[Has launch date::&lt; {{#time: d M Y | +36 months}} 12:00:00]]
+|?#=
+|?From page
+|?Has title
+|?Has launch date
+|?Required for
+|mainlabel=-
+|link=none
+|sort=Has launch date
+|format=template
+|template=Manifest dependencies
+}}
+&lt;/table&gt;</text>
+      <sha1>bkl0aag9m7msahsly4i3fwbr63rt28m</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52867</id>
+      <parentid>52818</parentid>
+      <timestamp>2015-03-24T14:58:34Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1132">This page automatically queries for all items listed in the manifest for [[Visiting Vehicles]] that are marked as &quot;Required for&quot;. The list is sorted chronologically by launch date. Items in red will not arrive until after the are needed. Items in yellow arrive between 1-14 days of being needed.
+
+
+&lt;h2&gt;Manifest&lt;/h2&gt;
+&lt;table class=&quot;wikitable smwtable sortable&quot;&gt;
+&lt;tr&gt;&lt;th&gt;Item on Manifest&lt;/th&gt;&lt;th&gt;Mission&lt;/th&gt;&lt;th&gt;Mission Dock Date&lt;/th&gt;&lt;th&gt;Required for&lt;/th&gt;&lt;th&gt;Dependency Start Date&lt;/th&gt;&lt;/tr&gt;
+{{#ask: [[Required for::+]] [[Has launch date::&gt; {{#time: d M Y | -1000 days}} 12:00:00]] [[Has launch date::&lt; {{#time: d M Y | +36 months}} 12:00:00]]
+|?#=
+|?From page
+|?Has title
+|?Has launch date
+|?Required for
+|mainlabel=-
+|link=none
+|sort=Has launch date
+|format=template
+|template=Manifest dependencies 2
+}}
+&lt;/table&gt;
+
+&lt;!--
+{{#ask: [[Required for::+]] [[Has launch date::&gt; {{#time: d M Y | -1000 days}} 12:00:00]] [[Has launch date::&lt; {{#time: d M Y | +36 months}} 12:00:00]]
+|?#=
+|?From page
+|?Has title
+|?Has launch date
+|?Required for
+|mainlabel=-
+|link=none
+|sort=Has launch date
+|format=template
+|template=Manifest dependencies
+}}
+--&gt;</text>
+      <sha1>3k5bars812k73i6kiu0jmccmkobuow8</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52980</id>
+      <parentid>52867</parentid>
+      <timestamp>2015-04-16T16:59:19Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1102">This page automatically queries for all items listed in the manifest for [[Visiting Vehicles]] that are marked as &quot;Required for&quot;. The list is sorted chronologically by launch date. Items in red will not arrive until after the are needed. Items in yellow arrive between 1-14 days of being needed.
+
+
+&lt;h2&gt;Manifest&lt;/h2&gt;
+&lt;table class=&quot;wikitable smwtable sortable&quot;&gt;
+&lt;tr&gt;&lt;th&gt;Item on Manifest&lt;/th&gt;&lt;th&gt;Mission&lt;/th&gt;&lt;th&gt;Mission Dock Date&lt;/th&gt;&lt;th&gt;Required for&lt;/th&gt;&lt;/tr&gt;
+{{#ask: [[Required for::+]] [[Has launch date::&gt; {{#time: d M Y | -1000 days}} 12:00:00]] [[Has launch date::&lt; {{#time: d M Y | +36 months}} 12:00:00]]
+|?#=
+|?From page
+|?Has title
+|?Has launch date
+|?Required for
+|mainlabel=-
+|link=none
+|sort=Has launch date
+|format=template
+|template=Manifest dependencies 2
+}}
+&lt;/table&gt;
+
+&lt;!--
+{{#ask: [[Required for::+]] [[Has launch date::&gt; {{#time: d M Y | -1000 days}} 12:00:00]] [[Has launch date::&lt; {{#time: d M Y | +36 months}} 12:00:00]]
+|?#=
+|?From page
+|?Has title
+|?Has launch date
+|?Required for
+|mainlabel=-
+|link=none
+|sort=Has launch date
+|format=template
+|template=Manifest dependencies
+}}
+--&gt;</text>
+      <sha1>le86ea0qq9697a9ig2bro3f38anydbg</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Manifest dependencies 2</title>
+    <ns>10</ns>
+    <id>11907</id>
+    <revision>
+      <id>52868</id>
+      <timestamp>2015-03-24T15:00:53Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;&lt;includeonly&gt;{{Manifest dependencies 2 level 2  | {{{1|}}}  | {{{2|}}}  | {{{3|}}}  | {{{4|}}}  | {{#show: {{{2|}}} | ?Dock date}}  | {{{5|}}}  | {{#show: {{{5|}}} | ?Start da...&quot;</comment>
+      <text xml:space="preserve" bytes="196">&lt;includeonly&gt;{{Manifest dependencies 2 level 2
+ | {{{1|}}}
+ | {{{2|}}}
+ | {{{3|}}}
+ | {{{4|}}}
+ | {{#show: {{{2|}}} | ?Dock date}}
+ | {{{5|}}}
+ | {{#show: {{{5|}}} | ?Start date}}
+}}&lt;/includeonly&gt;</text>
+      <sha1>t2ql2926m39enx72hjibofbhv14v48m</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52869</id>
+      <parentid>52868</parentid>
+      <timestamp>2015-03-24T15:01:33Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="193">&lt;includeonly&gt;{{#manifestdependenciesreport:
+ | {{{1|}}}
+ | {{{2|}}}
+ | {{{3|}}}
+ | {{{4|}}}
+ | {{#show: {{{2|}}} | ?Dock date}}
+ | {{{5|}}}
+ | {{#show: {{{5|}}} | ?Start date}}
+}}&lt;/includeonly&gt;</text>
+      <sha1>9heu1lhzh6swjxpin07r3xj9fiwkr42</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52870</id>
+      <parentid>52869</parentid>
+      <timestamp>2015-03-24T15:03:56Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="322">&lt;includeonly&gt;{{#manifestdependenciesreport:
+ manifest mission = {{{1|}}} |
+ from page = {{{2|}}} |
+ item on manifest = {{{3|}}} |
+ manifest launch date = {{{4|}}} |
+ manifest dock date = {{#show: {{{2|}}} | ?Dock date}} |
+ dependency = {{{5|}}} |
+ dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;/includeonly&gt;</text>
+      <sha1>trh7fv27xn5ycviiu6lswj4s8clmlgm</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52871</id>
+      <parentid>52870</parentid>
+      <timestamp>2015-03-24T15:15:42Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="447">&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ manifest mission = {{{1|}}} |
+ from page = {{{2|}}} |
+ item on manifest = {{{3|}}} |
+ manifest launch date = {{{4|}}} |
+ manifest dock date = {{#show: {{{2|}}} | ?Dock date}} |
+ dependency = {{{5|}}} |
+ dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;</text>
+      <sha1>4jvhpv9c9y3wqnn0pw9khfmrzrl59db</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52872</id>
+      <parentid>52871</parentid>
+      <timestamp>2015-03-24T15:23:28Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="799">&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ {{{1|}}} |
+ {{{2|}}} |
+ {{{3|}}} |
+ {{{4|}}} |
+ {{#show: {{{2|}}} | ?Dock date}} |
+ {{{5|}}} |
+ {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;&lt;noinclude&gt;
+
+&lt;!--
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ manifest mission = {{{1|}}} |
+ from page = {{{2|}}} |
+ item on manifest = {{{3|}}} |
+ manifest launch date = {{{4|}}} |
+ manifest dock date = {{#show: {{{2|}}} | ?Dock date}} |
+ dependency = {{{5|}}} |
+ dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+--&gt;
+&lt;/noinclude&gt;</text>
+      <sha1>9iowe51v7egb65pbvnmmhawqi6yxpel</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52873</id>
+      <parentid>52872</parentid>
+      <timestamp>2015-03-24T15:30:37Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1248">&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ manifest mission = {{{1|}}} |
+ from page = {{{2|}}} |
+ item on manifest = {{{3|}}} |
+ manifest launch date = {{{4|}}} |
+ manifest dock date = {{#show: {{{2|}}} | ?Dock date}} |
+ dependency = {{{5|}}} |
+ dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;&lt;noinclude&gt;
+
+&lt;!--
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ manifest mission = {{{1|}}} |
+ from page = {{{2|}}} |
+ item on manifest = {{{3|}}} |
+ manifest launch date = {{{4|}}} |
+ manifest dock date = {{#show: {{{2|}}} | ?Dock date}} |
+ dependency = {{{5|}}} |
+ dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ {{{1|}}} |
+ {{{2|}}} |
+ {{{3|}}} |
+ {{{4|}}} |
+ {{#show: {{{2|}}} | ?Dock date}} |
+ {{{5|}}} |
+ {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+--&gt;
+&lt;/noinclude&gt;</text>
+      <sha1>dss8ndyu4muuv0mwztxv1vjh8pfz28a</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52874</id>
+      <parentid>52873</parentid>
+      <timestamp>2015-03-24T15:42:34Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1256">&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;&lt;noinclude&gt;
+
+&lt;!--
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ manifest mission = {{{1|}}} |
+ from page = {{{2|}}} |
+ item on manifest = {{{3|}}} |
+ manifest launch date = {{{4|}}} |
+ manifest dock date = {{#show: {{{2|}}} | ?Dock date}} |
+ dependency = {{{5|}}} |
+ dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ {{{1|}}} |
+ {{{2|}}} |
+ {{{3|}}} |
+ {{{4|}}} |
+ {{#show: {{{2|}}} | ?Dock date}} |
+ {{{5|}}} |
+ {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+--&gt;
+&lt;/noinclude&gt;</text>
+      <sha1>pvqu8g7udzorjeguqrm07arx5rx6ts8</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52875</id>
+      <parentid>52874</parentid>
+      <timestamp>2015-03-24T19:56:26Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1583">&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | {{{1|}}} 
+ | {{{2|}}} 
+ | {{{3|}}} 
+ | {{{4|}}} 
+ | {{#show: {{{2|}}} | ?Dock date}} 
+ | {{{5|}}} 
+ | {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;&lt;noinclude&gt;
+
+&lt;!--
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ manifest mission = {{{1|}}} |
+ from page = {{{2|}}} |
+ item on manifest = {{{3|}}} |
+ manifest launch date = {{{4|}}} |
+ manifest dock date = {{#show: {{{2|}}} | ?Dock date}} |
+ dependency = {{{5|}}} |
+ dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ {{{1|}}} |
+ {{{2|}}} |
+ {{{3|}}} |
+ {{{4|}}} |
+ {{#show: {{{2|}}} | ?Dock date}} |
+ {{{5|}}} |
+ {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+--&gt;
+&lt;/noinclude&gt;</text>
+      <sha1>ah8po0jurmymvlwf81vu0krsvmqnpqs</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52876</id>
+      <parentid>52875</parentid>
+      <timestamp>2015-03-24T19:59:03Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="2041">&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;&lt;noinclude&gt;
+
+&lt;!--
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | {{{1|}}} 
+ | {{{2|}}} 
+ | {{{3|}}} 
+ | {{{4|}}} 
+ | {{#show: {{{2|}}} | ?Dock date}} 
+ | {{{5|}}} 
+ | {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ manifest mission = {{{1|}}} |
+ from page = {{{2|}}} |
+ item on manifest = {{{3|}}} |
+ manifest launch date = {{{4|}}} |
+ manifest dock date = {{#show: {{{2|}}} | ?Dock date}} |
+ dependency = {{{5|}}} |
+ dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ {{{1|}}} |
+ {{{2|}}} |
+ {{{3|}}} |
+ {{{4|}}} |
+ {{#show: {{{2|}}} | ?Dock date}} |
+ {{{5|}}} |
+ {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+--&gt;
+&lt;/noinclude&gt;</text>
+      <sha1>rpnb13f452n04jdpltni8mnezi4014m</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52877</id>
+      <parentid>52876</parentid>
+      <timestamp>2015-03-24T20:00:12Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1910">&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | {{{1|}}} 
+ | {{{2|}}} 
+ | {{{3|}}} 
+ | {{{4|}}} 
+ | {{#show: {{{2|}}} | ?Dock date}} 
+ | {{{5|}}} 
+ | {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;&lt;noinclude&gt;
+
+&lt;!--
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | {{{1|}}} 
+ | {{{2|}}} 
+ | {{{3|}}} 
+ | {{{4|}}} 
+ | {{#show: {{{2|}}} | ?Dock date}} 
+ | {{{5|}}} 
+ | {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ manifest mission = {{{1|}}} |
+ from page = {{{2|}}} |
+ item on manifest = {{{3|}}} |
+ manifest launch date = {{{4|}}} |
+ manifest dock date = {{#show: {{{2|}}} | ?Dock date}} |
+ dependency = {{{5|}}} |
+ dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ {{{1|}}} |
+ {{{2|}}} |
+ {{{3|}}} |
+ {{{4|}}} |
+ {{#show: {{{2|}}} | ?Dock date}} |
+ {{{5|}}} |
+ {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+--&gt;
+&lt;/noinclude&gt;</text>
+      <sha1>kertshjzu8rpizcu0dtrxm6xpkzeo6u</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52878</id>
+      <parentid>52877</parentid>
+      <timestamp>2015-03-24T20:26:59Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="2041">&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;&lt;noinclude&gt;
+
+&lt;!--
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | {{{1|}}} 
+ | {{{2|}}} 
+ | {{{3|}}} 
+ | {{{4|}}} 
+ | {{#show: {{{2|}}} | ?Dock date}} 
+ | {{{5|}}} 
+ | {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ manifest mission = {{{1|}}} |
+ from page = {{{2|}}} |
+ item on manifest = {{{3|}}} |
+ manifest launch date = {{{4|}}} |
+ manifest dock date = {{#show: {{{2|}}} | ?Dock date}} |
+ dependency = {{{5|}}} |
+ dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ {{{1|}}} |
+ {{{2|}}} |
+ {{{3|}}} |
+ {{{4|}}} |
+ {{#show: {{{2|}}} | ?Dock date}} |
+ {{{5|}}} |
+ {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+--&gt;
+&lt;/noinclude&gt;</text>
+      <sha1>rpnb13f452n04jdpltni8mnezi4014m</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52879</id>
+      <parentid>52878</parentid>
+      <timestamp>2015-03-25T22:52:12Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="2076">&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#arraymap: {{{5|}}}|,|VARDATE|{{#show: VARDATE | ?Start date}}|,}}
+}}&lt;br /&gt;&lt;/includeonly&gt;&lt;noinclude&gt;
+
+&lt;!--
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | {{{1|}}} 
+ | {{{2|}}} 
+ | {{{3|}}} 
+ | {{{4|}}} 
+ | {{#show: {{{2|}}} | ?Dock date}} 
+ | {{{5|}}} 
+ | {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ manifest mission = {{{1|}}} |
+ from page = {{{2|}}} |
+ item on manifest = {{{3|}}} |
+ manifest launch date = {{{4|}}} |
+ manifest dock date = {{#show: {{{2|}}} | ?Dock date}} |
+ dependency = {{{5|}}} |
+ dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ {{{1|}}} |
+ {{{2|}}} |
+ {{{3|}}} |
+ {{{4|}}} |
+ {{#show: {{{2|}}} | ?Dock date}} |
+ {{{5|}}} |
+ {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+--&gt;
+&lt;/noinclude&gt;</text>
+      <sha1>rid451jxu9bkp5vjnu0n0htgnkc9ghc</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52970</id>
+      <parentid>52879</parentid>
+      <timestamp>2015-04-14T00:01:28Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="2077">&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#arraymap: {{{5|}}}|,|VARDATE|{{#show: VARDATE | ?Start date}}|, }}
+}}&lt;br /&gt;&lt;/includeonly&gt;&lt;noinclude&gt;
+
+&lt;!--
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | {{{1|}}} 
+ | {{{2|}}} 
+ | {{{3|}}} 
+ | {{{4|}}} 
+ | {{#show: {{{2|}}} | ?Dock date}} 
+ | {{{5|}}} 
+ | {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ manifest mission = {{{1|}}} |
+ from page = {{{2|}}} |
+ item on manifest = {{{3|}}} |
+ manifest launch date = {{{4|}}} |
+ manifest dock date = {{#show: {{{2|}}} | ?Dock date}} |
+ dependency = {{{5|}}} |
+ dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ {{{1|}}} |
+ {{{2|}}} |
+ {{{3|}}} |
+ {{{4|}}} |
+ {{#show: {{{2|}}} | ?Dock date}} |
+ {{{5|}}} |
+ {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+--&gt;
+&lt;/noinclude&gt;</text>
+      <sha1>a1rro10o36lp6yonban4hbyo6316bo7</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52971</id>
+      <parentid>52970</parentid>
+      <timestamp>2015-04-14T00:02:46Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="2078">&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#arraymap: {{{5|}}}|,|VARDATE|{{#show: VARDATE | ?Start date}}|,\n}}
+}}&lt;br /&gt;&lt;/includeonly&gt;&lt;noinclude&gt;
+
+&lt;!--
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | {{{1|}}} 
+ | {{{2|}}} 
+ | {{{3|}}} 
+ | {{{4|}}} 
+ | {{#show: {{{2|}}} | ?Dock date}} 
+ | {{{5|}}} 
+ | {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ manifest mission = {{{1|}}} |
+ from page = {{{2|}}} |
+ item on manifest = {{{3|}}} |
+ manifest launch date = {{{4|}}} |
+ manifest dock date = {{#show: {{{2|}}} | ?Dock date}} |
+ dependency = {{{5|}}} |
+ dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ {{{1|}}} |
+ {{{2|}}} |
+ {{{3|}}} |
+ {{{4|}}} |
+ {{#show: {{{2|}}} | ?Dock date}} |
+ {{{5|}}} |
+ {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+--&gt;
+&lt;/noinclude&gt;</text>
+      <sha1>r1cbpj2yda0c8c5viqvyi7dkq38nkl4</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52972</id>
+      <parentid>52971</parentid>
+      <timestamp>2015-04-14T00:03:57Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="2082">&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#arraymap: {{{5|}}}|,|VARDATE|{{#show: VARDATE | ?Start date}}|,&lt;br /&gt;}}
+}}&lt;br /&gt;&lt;/includeonly&gt;&lt;noinclude&gt;
+
+&lt;!--
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | {{{1|}}} 
+ | {{{2|}}} 
+ | {{{3|}}} 
+ | {{{4|}}} 
+ | {{#show: {{{2|}}} | ?Dock date}} 
+ | {{{5|}}} 
+ | {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ manifest mission = {{{1|}}} |
+ from page = {{{2|}}} |
+ item on manifest = {{{3|}}} |
+ manifest launch date = {{{4|}}} |
+ manifest dock date = {{#show: {{{2|}}} | ?Dock date}} |
+ dependency = {{{5|}}} |
+ dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ {{{1|}}} |
+ {{{2|}}} |
+ {{{3|}}} |
+ {{{4|}}} |
+ {{#show: {{{2|}}} | ?Dock date}} |
+ {{{5|}}} |
+ {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+--&gt;
+&lt;/noinclude&gt;</text>
+      <sha1>hcs9m9n3in4c4x9c2qms8j838d7bctk</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52974</id>
+      <parentid>52972</parentid>
+      <timestamp>2015-04-15T22:44:42Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="2118">&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#arraymap: {{{5|}}}|,|VARDATE|{{#show: VARDATE | ?Start date}}|, }}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#arraymap: {{{5|}}}|,|VARDATE|{{#show: VARDATE | ?Start date}}|,&lt;br /&gt;}}
+}}&lt;br /&gt;&lt;/includeonly&gt;&lt;noinclude&gt;
+
+&lt;!--
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | {{{1|}}} 
+ | {{{2|}}} 
+ | {{{3|}}} 
+ | {{{4|}}} 
+ | {{#show: {{{2|}}} | ?Dock date}} 
+ | {{{5|}}} 
+ | {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ manifest mission = {{{1|}}} |
+ from page = {{{2|}}} |
+ item on manifest = {{{3|}}} |
+ manifest launch date = {{{4|}}} |
+ manifest dock date = {{#show: {{{2|}}} | ?Dock date}} |
+ dependency = {{{5|}}} |
+ dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ {{{1|}}} |
+ {{{2|}}} |
+ {{{3|}}} |
+ {{{4|}}} |
+ {{#show: {{{2|}}} | ?Dock date}} |
+ {{{5|}}} |
+ {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+--&gt;
+&lt;/noinclude&gt;</text>
+      <sha1>1x9dokj8s21o2q0z1x0rq3olbgg4yjl</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52975</id>
+      <parentid>52974</parentid>
+      <timestamp>2015-04-15T22:51:39Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="2121">&lt;includeonly&gt;{{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#arraymap: {{{5|}}}|,|VARDATE|{{#show: VARDATE | ?Start date}}|,&lt;br /&gt;}}
+}}&lt;br /&gt;&lt;/includeonly&gt;&lt;noinclude&gt;
+
+&lt;!--
+{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#arraymap: {{{5|}}}|,|VARDATE|{{#show: VARDATE | ?Start date}}|, }}, 
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | {{{1|}}} 
+ | {{{2|}}} 
+ | {{{3|}}} 
+ | {{{4|}}} 
+ | {{#show: {{{2|}}} | ?Dock date}} 
+ | {{{5|}}} 
+ | {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ manifest mission = {{{1|}}} |
+ from page = {{{2|}}} |
+ item on manifest = {{{3|}}} |
+ manifest launch date = {{{4|}}} |
+ manifest dock date = {{#show: {{{2|}}} | ?Dock date}} |
+ dependency = {{{5|}}} |
+ dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ {{{1|}}} |
+ {{{2|}}} |
+ {{{3|}}} |
+ {{{4|}}} |
+ {{#show: {{{2|}}} | ?Dock date}} |
+ {{{5|}}} |
+ {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+--&gt;
+&lt;/noinclude&gt;</text>
+      <sha1>5y8xsvmiutyxnsho8kwl4qb9ueumb5z</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52976</id>
+      <parentid>52975</parentid>
+      <timestamp>2015-04-15T22:55:23Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="2115">&lt;includeonly&gt;{{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#arraymap: {{{5|}}}|,|VARDATE|{{#show: VARDATE | ?Start date}}|,}}
+}}&lt;br /&gt;&lt;/includeonly&gt;&lt;noinclude&gt;
+
+&lt;!--
+{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#arraymap: {{{5|}}}|,|VARDATE|{{#show: VARDATE | ?Start date}}|, }}, 
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | {{{1|}}} 
+ | {{{2|}}} 
+ | {{{3|}}} 
+ | {{{4|}}} 
+ | {{#show: {{{2|}}} | ?Dock date}} 
+ | {{{5|}}} 
+ | {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ manifest mission = {{{1|}}} |
+ from page = {{{2|}}} |
+ item on manifest = {{{3|}}} |
+ manifest launch date = {{{4|}}} |
+ manifest dock date = {{#show: {{{2|}}} | ?Dock date}} |
+ dependency = {{{5|}}} |
+ dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ {{{1|}}} |
+ {{{2|}}} |
+ {{{3|}}} |
+ {{{4|}}} |
+ {{#show: {{{2|}}} | ?Dock date}} |
+ {{{5|}}} |
+ {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+--&gt;
+&lt;/noinclude&gt;</text>
+      <sha1>3msx15sl3iuhnzef50hgxpw4zxuhc5f</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52977</id>
+      <parentid>52976</parentid>
+      <timestamp>2015-04-16T16:26:10Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="2423">&lt;includeonly&gt;{{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependencies = {{#arraymap: {{{5|}}}|,|VAR|{{{5|}}},{{#show: VAR | ?Start date}}|;}}
+}}&lt;br /&gt;&lt;/includeonly&gt;&lt;noinclude&gt;
+
+&lt;!--
+
+{{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#arraymap: {{{5|}}}|,|VARDATE|{{#show: VARDATE | ?Start date}}|,}}
+}}
+
+
+{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#arraymap: {{{5|}}}|,|VARDATE|{{#show: VARDATE | ?Start date}}|, }}, 
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | {{{1|}}} 
+ | {{{2|}}} 
+ | {{{3|}}} 
+ | {{{4|}}} 
+ | {{#show: {{{2|}}} | ?Dock date}} 
+ | {{{5|}}} 
+ | {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ manifest mission = {{{1|}}} |
+ from page = {{{2|}}} |
+ item on manifest = {{{3|}}} |
+ manifest launch date = {{{4|}}} |
+ manifest dock date = {{#show: {{{2|}}} | ?Dock date}} |
+ dependency = {{{5|}}} |
+ dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ {{{1|}}} |
+ {{{2|}}} |
+ {{{3|}}} |
+ {{{4|}}} |
+ {{#show: {{{2|}}} | ?Dock date}} |
+ {{{5|}}} |
+ {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+--&gt;
+&lt;/noinclude&gt;</text>
+      <sha1>h3t36jnjkij39uhe42q2hjyap2je6sz</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52978</id>
+      <parentid>52977</parentid>
+      <timestamp>2015-04-16T16:28:59Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="2421">&lt;includeonly&gt;{{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{#arraymap: {{{5|}}}|,|VAR|{{{5|}}},{{#show: VAR | ?Start date}}|;}}
+}}&lt;br /&gt;&lt;/includeonly&gt;&lt;noinclude&gt;
+
+&lt;!--
+
+{{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#arraymap: {{{5|}}}|,|VARDATE|{{#show: VARDATE | ?Start date}}|,}}
+}}
+
+
+{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#arraymap: {{{5|}}}|,|VARDATE|{{#show: VARDATE | ?Start date}}|, }}, 
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | {{{1|}}} 
+ | {{{2|}}} 
+ | {{{3|}}} 
+ | {{{4|}}} 
+ | {{#show: {{{2|}}} | ?Dock date}} 
+ | {{{5|}}} 
+ | {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ manifest mission = {{{1|}}} |
+ from page = {{{2|}}} |
+ item on manifest = {{{3|}}} |
+ manifest launch date = {{{4|}}} |
+ manifest dock date = {{#show: {{{2|}}} | ?Dock date}} |
+ dependency = {{{5|}}} |
+ dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ {{{1|}}} |
+ {{{2|}}} |
+ {{{3|}}} |
+ {{{4|}}} |
+ {{#show: {{{2|}}} | ?Dock date}} |
+ {{{5|}}} |
+ {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+--&gt;
+&lt;/noinclude&gt;</text>
+      <sha1>e4jjndilfkoy1dxkyixeaiof7pjzfy4</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52979</id>
+      <parentid>52978</parentid>
+      <timestamp>2015-04-16T16:40:30Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="2416">&lt;includeonly&gt;{{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{#arraymap: {{{5|}}}|,|VAR|VAR,{{#show: VAR | ?Start date}}|;}}
+}}&lt;br /&gt;&lt;/includeonly&gt;&lt;noinclude&gt;
+
+&lt;!--
+
+{{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#arraymap: {{{5|}}}|,|VARDATE|{{#show: VARDATE | ?Start date}}|,}}
+}}
+
+
+{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#arraymap: {{{5|}}}|,|VARDATE|{{#show: VARDATE | ?Start date}}|, }}, 
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | {{{1|}}} 
+ | {{{2|}}} 
+ | {{{3|}}} 
+ | {{{4|}}} 
+ | {{#show: {{{2|}}} | ?Dock date}} 
+ | {{{5|}}} 
+ | {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ manifest mission = {{{1|}}} |
+ from page = {{{2|}}} |
+ item on manifest = {{{3|}}} |
+ manifest launch date = {{{4|}}} |
+ manifest dock date = {{#show: {{{2|}}} | ?Dock date}} |
+ dependency = {{{5|}}} |
+ dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ {{{1|}}} |
+ {{{2|}}} |
+ {{{3|}}} |
+ {{{4|}}} |
+ {{#show: {{{2|}}} | ?Dock date}} |
+ {{{5|}}} |
+ {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+--&gt;
+&lt;/noinclude&gt;</text>
+      <sha1>24z6q0ic5cmsmfec7q6a8anvy98g646</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+    <revision>
+      <id>52981</id>
+      <parentid>52979</parentid>
+      <timestamp>2015-04-16T17:40:13Z</timestamp>
+      <contributor>
+        <username>Lwelsh</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="2439">&lt;includeonly&gt;{{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{#arraymap: {{{5|}}}|,|VAR|VAR,{{#time: Y-m-d | {{#show: VAR | ?Start date}} }}|;}}
+}}&lt;br /&gt;&lt;/includeonly&gt;&lt;noinclude&gt;
+
+
+
+
+&lt;!--
+
+{{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#arraymap: {{{5|}}}|,|VARDATE|{{#show: VARDATE | ?Start date}}|,}}
+}}
+
+
+{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#arraymap: {{{5|}}}|,|VARDATE|{{#show: VARDATE | ?Start date}}|, }}, 
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | {{{1|}}} 
+ | {{{2|}}} 
+ | {{{3|}}} 
+ | {{{4|}}} 
+ | {{#show: {{{2|}}} | ?Dock date}} 
+ | {{{5|}}} 
+ | {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ | manifest mission = {{{1|}}} 
+ | from page = {{{2|}}} 
+ | item on manifest = {{{3|}}} 
+ | manifest launch date = {{{4|}}} 
+ | manifest dock date = {{#show: {{{2|}}} | ?Dock date}} 
+ | dependency = {{{5|}}} 
+ | dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ manifest mission = {{{1|}}} |
+ from page = {{{2|}}} |
+ item on manifest = {{{3|}}} |
+ manifest launch date = {{{4|}}} |
+ manifest dock date = {{#show: {{{2|}}} | ?Dock date}} |
+ dependency = {{{5|}}} |
+ dependency start date = {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+
+
+&lt;includeonly&gt;{{{1|}}}, {{{2|}}}, {{{3|}}}, {{{4|}}}, {{#show: {{{2|}}} | ?Dock date}}, {{{5|}}}, {{#show: {{{5|}}} | ?Start date}}, {{#manifestdependenciesreport:
+ {{{1|}}} |
+ {{{2|}}} |
+ {{{3|}}} |
+ {{{4|}}} |
+ {{#show: {{{2|}}} | ?Dock date}} |
+ {{{5|}}} |
+ {{#show: {{{5|}}} | ?Start date}}
+}}&lt;br /&gt;&lt;/includeonly&gt;
+--&gt;
+&lt;/noinclude&gt;</text>
+      <sha1>3sc8p9g79jkeo9g9fbnw6dz31rkaco3</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+</mediawiki>
