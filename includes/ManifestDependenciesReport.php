@@ -34,8 +34,8 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
             'manifest mission'      => '1', //subobject
             'from page'             => '2',
             'item on manifest'      => '3',
-            'manifest launch date'  => '4',
-            'manifest dock date'    => '5',
+            'manifest launch date'  => '4', // (Y-m-d)
+            'manifest dock date'    => '5', // (Y-m-d)
             'dependency'            => '6'  //dependency1,dependency1StartDate (Y-m-d);dependency2,dependency2StartDate (Y-m-d); ...
             // 'dependency start date' => '7'
          )
@@ -47,11 +47,12 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
 
    public function render ( \Parser &$parser, $params ) {
 
+      $yellowMargin = strtotime("+30 days");
       $manifestMission = $params['manifest mission'];
       $fromPage = $params['from page'];
       $itemOnManifest = $params['item on manifest'];
-      $manifestLaunchDate = $params['manifest launch date'];
-      $manifestDockDate = $params['manifest dock date'];
+      $manifestLaunchDate = strtotime($params['manifest launch date']);
+      $manifestDockDate = strtotime($params['manifest dock date']);
       $dependency = $params['dependency'];
 
       $dependencyArray = explode(';', $dependency);
@@ -70,7 +71,26 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
          $itemOnManifestList
       );
 
+      $rowColor = "transparent";
+      // if ( $dependencies[0][1] < $manifestDockDate ) {
+      //   $rowColor = "red";
+      // } else if ( $dependencies[0][1] < $manifestDockDate + $yellowMargin ) {
+      //   $rowColor = "yellow";
+      // }
 
+      foreach ($dependencies as $date => $name) {
+        $dateTime = strtotime($date);
+        if ( $dateTime + $yellowMargin < $manifestDockDate ) {
+          $rowColor = "yellow";
+        } else if ( $dateTime < $manifestDockDate ) {
+          $rowColor = "red";
+        }//print_r($rowColor . "/" . $date . "/" . $manifestDockDate . "<br />");
+      }
+      unset($value);
+
+
+      // print_r($date . "," . $rowColor . "//");
+// var_dump($dependencies);
 
 #
 # VARIABLE DEFINITIONS
@@ -209,11 +229,11 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       // $output .= var_dump($newDependencies);
       // $output .= var_export($dependencies);
 
-      $output = "<tr>";
+      $output = "<tr style=\"background-color:$rowColor;\">";
     
       $output .= "<td>" . implode (",<br />", $itemOnManifestListModified ) . "</td>";
       $output .= "<td>[[$fromPage]]</td>";
-      $output .= "<td>$manifestDockDate</td>";
+      $output .= "<td>" . date('Y-m-d',$manifestDockDate) . "</td>";
       // $output .= "<td>" . implode (",<br />", $dependencyListModified ) . "</td>";
       // $output .= "<td>" . implode (",<br />", $dependencies ) . "</td>";
       $output .= "<td>";
@@ -222,7 +242,9 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       foreach ($dependencies as $date => $name) {
          $output .= "[[" . $name . "]] (";
             if( $date ){
-               $output .= $date;
+               // $output .= $date;
+              $dateNew = strtotime($date);
+               $output .= date('Y-m-d',$dateNew);
             }else{
                $output .= "no date";
             }
