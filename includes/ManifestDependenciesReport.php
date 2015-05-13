@@ -20,6 +20,7 @@ http://php.net/manual/en/function.date.php
 namespace ManifestDependencies;
 use ParserFunctionHelper\ParserFunctionHelper;
 
+// This class generates the MD Report one row at a time. So each object is actually just one row.
 class ManifestDependenciesReport extends ParserFunctionHelper {
 
 
@@ -43,11 +44,23 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
 
    }
 
-   // public function 
+   public function sortNullLast ( $x, $y ) {
+      if( $x == $y ){
+        return 0;
+      // } else if ( $x > $y && !is_null($y) ){ //neither is NULL
+      } else if ( $x > $y && $y != NULL ){ //neither is NULL
+        return 1;
+      } else if ( $x == NULL ) {
+        return 1;
+      } else {
+        return -1;
+      }
+   }
 
    public function render ( \Parser &$parser, $params ) {
 
-      $yellowMargin = strtotime("+30 days");
+      // $yellowMargin = strtotime("+30 days");
+      $yellowMargin = 30;
       $manifestMission = $params['manifest mission'];
       $fromPage = $params['from page'];
       $itemOnManifest = $params['item on manifest'];
@@ -55,13 +68,33 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       $manifestDockDate = strtotime($params['manifest dock date']);
       $dependency = $params['dependency'];
 
-      $dependencyArray = explode(';', $dependency);
+      $dependencyArray = explode(';', $dependency); //Split each dependency apart
       foreach ($dependencyArray as &$value) {
-         $dependencyArray2 = explode(',', $value);
-         $dependencies[$dependencyArray2[1]] = $dependencyArray2[0];
+         $dependencyArrayPieces = explode(',', $value); //Dependency name,Dependency date
+         // $dependencies[$dependencyArrayPieces[0]] = $dependencyArrayPieces[1];
+         // $tempDate = strtotime($dependencyArrayPieces[1]);
+         // $tempDate2 = date('Ymd',$tempDate);
+         // $dependencies[$dependencyArrayPieces[0]] = $tempDate2;
+         $datePiece = $dependencyArrayPieces[1];
+         if ( $datePiece != NULL ) {
+          $dependencies[$dependencyArrayPieces[0]] = date('Y-m-d', strtotime($datePiece) );
+         } else {
+          $dependencies[$dependencyArrayPieces[0]] = $datePiece;
+         }
       }
       unset($value);
-      ksort($dependencies); //sort by date
+print_r($dependencies);
+      // User-defined sort to treat NULL as latest date
+      uasort( $dependencies, "self::sortNullLast" );
+      // uksort( $dependencies, function($x,$y){print_r("test");
+      //   if( $x == $y ){
+      //     return 0; print_r("0, ");
+      //   } else if ( $y && $x > $y ){
+      //     return 1; print_r("1, ");
+      //   } else {
+      //     return -1; print_r("-1, ");
+      //   }
+      // }); 
    
       $itemOnManifestList = explode ( "," , $itemOnManifest );
       $itemOnManifestListModified = array_map (
@@ -71,6 +104,7 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
          $itemOnManifestList
       );
 
+      //LOGIC TO COLOR ROWS
       $rowColor = "transparent";
       // if ( $dependencies[0][1] < $manifestDockDate ) {
       //   $rowColor = "red";
@@ -78,7 +112,8 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       //   $rowColor = "yellow";
       // }
 
-      foreach ($dependencies as $date => $name) {
+      foreach ($dependencies as $name => $date) {
+        // $dateTime = strtotime($date);
         $dateTime = strtotime($date);
         if ( $dateTime + $yellowMargin < $manifestDockDate ) {
           $rowColor = "yellow";
@@ -236,26 +271,38 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       $output .= "<td>" . date('Y-m-d',$manifestDockDate) . "</td>";
       // $output .= "<td>" . implode (",<br />", $dependencyListModified ) . "</td>";
       // $output .= "<td>" . implode (",<br />", $dependencies ) . "</td>";
-      $output .= "<td>";
 
+      //Dependencies
+      $output .= "<td>";
       $i = 1;
-      foreach ($dependencies as $date => $name) {
-         $output .= "[[" . $name . "]] (";
-            if( $date ){
-               // $output .= $date;
-              $dateNew = strtotime($date);
-               $output .= date('Y-m-d',$dateNew);
-            }else{
-               $output .= "no date";
-            }
-         $output .= ")";
+      foreach ($dependencies as $name => $date) {
+         $output .= "[[" . $name . "]]";
          if ( count($dependencies) > 1 ){
             $output .= "<br />";
          }
          $i++;
       }
       unset($value);
+      $output .= "</td>";
 
+      //Dependency Dates
+      $output .= "<td>";
+      $i = 1;
+      foreach ($dependencies as $name => $date) {
+          if( $date ){
+             // $output .= $date;
+            // $dateNew = strtotime($date);
+            $dateNew = strtotime($date);
+             $output .= date('Y-m-d',$dateNew);
+          }else{
+             $output .= "no date";
+          }
+         if ( count($dependencies) > 1 ){
+            $output .= "<br />";
+         }
+         $i++;
+      }
+      unset($value);
       $output .= "</td>";
 
       $output .= "</tr>";
