@@ -47,7 +47,6 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
    public function sortNullLast ( $x, $y ) {
       if( $x == $y ){
         return 0;
-      // } else if ( $x > $y && !is_null($y) ){ //neither is NULL
       } else if ( $x > $y && $y != NULL ){ //neither is NULL
         return 1;
       } else if ( $x == NULL ) {
@@ -59,22 +58,20 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
 
    public function render ( \Parser &$parser, $params ) {
 
+      //Variables
       // $yellowMargin = strtotime("+30 days");
       $yellowMargin = 30;
       $manifestMission = $params['manifest mission'];
       $fromPage = $params['from page'];
       $itemOnManifest = $params['item on manifest'];
-      $manifestLaunchDate = strtotime($params['manifest launch date']);
-      $manifestDockDate = strtotime($params['manifest dock date']);
+      $manifestLaunchDate = $params['manifest launch date'];
+      $manifestDockDate = $params['manifest dock date'];
       $dependency = $params['dependency'];
 
+      //Split dependencies out to dependency => date
       $dependencyArray = explode(';', $dependency); //Split each dependency apart
       foreach ($dependencyArray as &$value) {
          $dependencyArrayPieces = explode(',', $value); //Dependency name,Dependency date
-         // $dependencies[$dependencyArrayPieces[0]] = $dependencyArrayPieces[1];
-         // $tempDate = strtotime($dependencyArrayPieces[1]);
-         // $tempDate2 = date('Ymd',$tempDate);
-         // $dependencies[$dependencyArrayPieces[0]] = $tempDate2;
          $datePiece = $dependencyArrayPieces[1];
          if ( $datePiece != NULL ) {
           $dependencies[$dependencyArrayPieces[0]] = date('Y-m-d', strtotime($datePiece) );
@@ -83,19 +80,11 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
          }
       }
       unset($value);
-print_r($dependencies);
+
       // User-defined sort to treat NULL as latest date
       uasort( $dependencies, "self::sortNullLast" );
-      // uksort( $dependencies, function($x,$y){print_r("test");
-      //   if( $x == $y ){
-      //     return 0; print_r("0, ");
-      //   } else if ( $y && $x > $y ){
-      //     return 1; print_r("1, ");
-      //   } else {
-      //     return -1; print_r("-1, ");
-      //   }
-      // }); 
    
+      //Format item on manifest to be wiki link
       $itemOnManifestList = explode ( "," , $itemOnManifest );
       $itemOnManifestListModified = array_map (
          function($e){ 
@@ -106,26 +95,17 @@ print_r($dependencies);
 
       //LOGIC TO COLOR ROWS
       $rowColor = "transparent";
-      // if ( $dependencies[0][1] < $manifestDockDate ) {
-      //   $rowColor = "red";
-      // } else if ( $dependencies[0][1] < $manifestDockDate + $yellowMargin ) {
-      //   $rowColor = "yellow";
-      // }
 
       foreach ($dependencies as $name => $date) {
-        // $dateTime = strtotime($date);
         $dateTime = strtotime($date);
-        if ( $dateTime + $yellowMargin < $manifestDockDate ) {
-          $rowColor = "yellow";
-        } else if ( $dateTime < $manifestDockDate ) {
-          $rowColor = "red";
-        }//print_r($rowColor . "/" . $date . "/" . $manifestDockDate . "<br />");
+        if ( $date != NULL && strtotime($date) < strtotime($manifestDockDate) ) {
+          $rowColor = "red"; print_r("red! ");
+        } else if ( $rowColor != "red" && $date != NULL && strtotime($date) < strtotime( $manifestDockDate ) + strtotime("+$yellowMargin days") ) {
+          $rowColor = "yellow"; print_r("yellow! ");
       }
       unset($value);
 
 
-      // print_r($date . "," . $rowColor . "//");
-// var_dump($dependencies);
 
 #
 # VARIABLE DEFINITIONS
@@ -268,7 +248,7 @@ print_r($dependencies);
     
       $output .= "<td>" . implode (",<br />", $itemOnManifestListModified ) . "</td>";
       $output .= "<td>[[$fromPage]]</td>";
-      $output .= "<td>" . date('Y-m-d',$manifestDockDate) . "</td>";
+      $output .= "<td>" . date('Y-m-d',strtotime($manifestDockDate)) . "</td>";
       // $output .= "<td>" . implode (",<br />", $dependencyListModified ) . "</td>";
       // $output .= "<td>" . implode (",<br />", $dependencies ) . "</td>";
 
