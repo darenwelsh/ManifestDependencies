@@ -99,12 +99,12 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       foreach ($dependencies as $name => $date) {
         $dateTime = strtotime($date);
         if ( $date != NULL && strtotime($date) < strtotime($manifestDockDate) ) {
-          $rowColor = "red"; print_r("red! ");
+          $rowColor = "red"; 
         } else if ( $rowColor != "red" && $date != NULL && strtotime($date) < strtotime( $manifestDockDate ) + strtotime("+$yellowMargin days") ) {
-          $rowColor = "yellow"; print_r("yellow! ");
+          $rowColor = "yellow"; 
+        }
       }
       unset($value);
-
 
 
 #
