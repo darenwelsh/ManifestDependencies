@@ -37,7 +37,7 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
             'item on manifest'      => '3',
             'manifest launch date'  => '4', // (Y-m-d)
             'manifest dock date'    => '5', // (Y-m-d)
-            'dependency'            => '6'  //dependency1,dependency1StartDate (Y-m-d);dependency2,dependency2StartDate (Y-m-d); ...
+            'dependency'            => '6'  //dependency1,dependency1StartDate (Y-m-d),dependency1DockDate (Y-m-d);...
             // 'dependency start date' => '7'
          )
       );
@@ -56,6 +56,27 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       }
    }
 
+    //Pass in SMW property and do stuff (stolen from James for modification)
+    public static function smwPropertyEqualsCurrentUser ( $userProperty ) {
+      global $wgTitle, $wgUser;
+          
+      if ( ! class_exists('SMWHooks') ) // if semantic not installed
+        die('Semantic MediaWiki must be installed to use the ApprovedRevs "Property" definition.');
+      else {  
+        $valueDis = smwfGetStore()->getPropertyValues( 
+          new SMWDIWikiPage( $wgTitle->getDBkey(), $wgTitle->getNamespace(), '' ),
+          new SMWDIProperty( SMWPropertyValue::makeUserProperty( $userProperty )->getDBkey() ) );   // trim($userProperty)
+        
+        foreach ($valueDis as $valueDI) {
+          if ( ! $valueDI instanceof SMWDIWikiPage )
+            throw new Exception('ApprovedRevs "Property" permissions must use Semantic MediaWiki properties of type "Page"');
+          if ( $valueDI->getTitle()->getText() == $wgUser->getUserPage()->getText() )
+            return true;
+        }
+      }
+      return false;
+    }
+
    public function render ( \Parser &$parser, $params ) {
 
       //Variables
@@ -71,12 +92,13 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       //Split dependencies out to dependency => date
       $dependencyArray = explode(';', $dependency); //Split each dependency apart
       foreach ($dependencyArray as &$value) {
-         $dependencyArrayPieces = explode(',', $value); //Dependency name,Dependency date
-         $datePiece = $dependencyArrayPieces[1];
-         if ( $datePiece != NULL ) {
-          $dependencies[$dependencyArrayPieces[0]] = date('Y-m-d', strtotime($datePiece) );
+         $dependencyArrayPieces = explode(',', $value); //Dependency name,Dependency start date,Dependency dock date
+         if ( $dependencyArrayPieces[1] != NULL ) {
+          $dependencies[$dependencyArrayPieces[0]] = date('Y-m-d', strtotime($dependencyArrayPieces[1]) );
+         } else if ( $dependencyArrayPieces[2] != NULL ) {
+          $dependencies[$dependencyArrayPieces[0]] = date('Y-m-d', strtotime($dependencyArrayPieces[2]) );
          } else {
-          $dependencies[$dependencyArrayPieces[0]] = $datePiece;
+          $dependencies[$dependencyArrayPieces[0]] = $dependencyArrayPieces[1];
          }
       }
       unset($value);
