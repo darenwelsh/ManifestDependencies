@@ -24,6 +24,9 @@ class Setup {
 			
 		$evamanifestdependencies = new EVAManifestDependencies( $parser );
 		$evamanifestdependencies->setupParserFunction();
+			
+		$manifestitem = new ManifestItem( $parser );
+		$manifestitem->setupParserFunction();
 
 		// always return true
 		return true;

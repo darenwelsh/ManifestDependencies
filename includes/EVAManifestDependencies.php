@@ -103,8 +103,8 @@ class EVAManifestDependencies extends ParserFunctionHelper {
       // OUTPUT
       $output = "<tr style=\"background-color:$rowColor;\">";
     
-      $output .= "<td>[[" . $itemOnManifest . "]]</td>";
-      $output .= "<td>[[$fromPage]]";
+      $output .= "<td style='vertical-align:top;text-align=center;'>[[" . $itemOnManifest . "]]</td>";
+      $output .= "<td style='vertical-align:top;text-align=center;'>[[$fromPage]]";
       $output .= " (" . date('d F Y',strtotime($manifestDockDate)) . ")</td>";
 
       $output .= "</tr>";

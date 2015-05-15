@@ -9,26 +9,22 @@
 
 /* NOTES
 
-Ref https://github.com/jamesmontalvo3/MediaWiki-ApprovedRevs/blob/master/includes/ApprovedRevs_body.php#L597
-Learn how to query from within extension
 
-http://php.net/manual/en/datetime.format.php
-http://php.net/manual/en/function.date.php
 
 */
 
 namespace ManifestDependencies;
 use ParserFunctionHelper\ParserFunctionHelper;
 
-// This class generates the MD Report one row at a time. So each object is actually just one row.
-class ManifestDependenciesReport extends ParserFunctionHelper {
+// This class generates the list of items manifested on a mission one row at a time for an EVA page. So each object is actually just one row.
+class ManifestItem extends ParserFunctionHelper {
 
 
    public function __construct ( \Parser &$parser ) {
 
       parent::__construct(
          $parser, // mediawiki parser object
-         'manifestdependenciesreport', // parser function name
+         'manifestitem', // parser function name
          array( // unnamed parameters (numeric index params)
          ),
          array( // named parameters AKA "named index params" (empty array)
@@ -37,8 +33,13 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
             'item on manifest'      => '3',
             'manifest launch date'  => '4', // (Y-m-d)
             'manifest dock date'    => '5', // (Y-m-d)
-            'dependency'            => '6'  //dependency1,dependency1StartDate (Y-m-d),dependency1DockDate (Y-m-d);...
-            // 'dependency start date' => '7'
+            'dependency'            => '6',  //dependency1,dependency1StartDate (Y-m-d),dependency1DockDate (Y-m-d);...
+            // 'item title'            => '7',
+            // 'part number'           => '8',
+            // 'serial number'         => '9',
+            // 'quantity'              => '10',
+            // 'updown'                => '11',
+            // 'notes'                 => '12'
          )
       );
 
@@ -57,27 +58,6 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
         return -1;
       }
    }
-
-    //Pass in SMW property and do stuff (stolen from James for modification)
-    public static function smwPropertyEqualsCurrentUser ( $userProperty ) {
-      global $wgTitle, $wgUser;
-          
-      if ( ! class_exists('SMWHooks') ) // if semantic not installed
-        die('Semantic MediaWiki must be installed to use the ApprovedRevs "Property" definition.');
-      else {  
-        $valueDis = smwfGetStore()->getPropertyValues( 
-          new SMWDIWikiPage( $wgTitle->getDBkey(), $wgTitle->getNamespace(), '' ),
-          new SMWDIProperty( SMWPropertyValue::makeUserProperty( $userProperty )->getDBkey() ) );   // trim($userProperty)
-        
-        foreach ($valueDis as $valueDI) {
-          if ( ! $valueDI instanceof SMWDIWikiPage )
-            throw new Exception('ApprovedRevs "Property" permissions must use Semantic MediaWiki properties of type "Page"');
-          if ( $valueDI->getTitle()->getText() == $wgUser->getUserPage()->getText() )
-            return true;
-        }
-      }
-      return false;
-    }
 
    public function render ( \Parser &$parser, $params ) {
 
@@ -110,16 +90,6 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       // User-defined sort to treat NULL as latest date
       uasort( $dependencies, "self::sortNullLast" );
 
-      //Format item on manifest to be wiki link
-      //Not sure if this is needed any more
-      // $itemOnManifestList = explode ( "," , $itemOnManifest );
-      // $itemOnManifestListModified = array_map (
-      //    function($e){ 
-      //       $eTrimmed = trim($e); 
-      //       return "[[$eTrimmed]]"; },
-      //    $itemOnManifestList
-      // );
-
       //LOGIC TO COLOR ROWS
       $rowColor = "transparent";
       foreach ($dependencies as $dep ) {
@@ -138,42 +108,9 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       // OUTPUT
       $output = "<tr style=\"background-color:$rowColor;\">";
     
-      // $output .= "<td>" . implode (",<br />", $itemOnManifestListModified ) . "</td>"; //not sure if this method is necessary any more
       $output .= "<td style='vertical-align:top;text-align=center;'>[[" . $itemOnManifest . "]]</td>";
-      $output .= "<td style='vertical-align:top;text-align=center;'>[[$fromPage]]</td>";
-      $output .= "<td style='vertical-align:top;text-align=center;'>" . date('d F Y',strtotime($manifestDockDate)) . "</td>";
-
-      //Dependencies
-      $output .= "<td>";
-      $i = 1;
-      foreach ($dependencies as $dep) {
-         $output .= "[[" . $dep["name"] . "]]";
-         if ( count($dep) > 1 ){
-            $output .= "<br />";
-         }
-         $i++;
-      }
-      unset($dep);
-      $output .= "</td>";
-
-      //Dependency Dates
-      $output .= "<td>";
-      $i = 1;
-      foreach ($dependencies as $dep) {
-        $date = $dep["date"];
-        if( $date ){
-          $dateNew = strtotime($date);
-           $output .= date('d F Y',$dateNew);
-        }else{
-           $output .= "no date";
-        }
-       if ( count($dep) > 1 ){
-          $output .= "<br />";
-       }
-       $i++;
-      }
-      unset($dep);
-      $output .= "</td>";
+      $output .= "<td>[[$fromPage]]";
+      $output .= " (" . date('d F Y',strtotime($manifestDockDate)) . ")</td>";
 
       $output .= "</tr>";
     
