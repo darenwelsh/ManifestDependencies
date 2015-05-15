@@ -21,6 +21,9 @@ class Setup {
 			
 		$manifestdependenciesreport = new ManifestDependenciesReport( $parser );
 		$manifestdependenciesreport->setupParserFunction();
+			
+		$evamanifestdependencies = new EVAManifestDependencies( $parser );
+		$evamanifestdependencies->setupParserFunction();
 
 		// always return true
 		return true;

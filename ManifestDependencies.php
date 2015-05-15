@@ -37,6 +37,7 @@ $GLOBALS['wgAutoloadClasses']['ManifestDependencies\Setup'] = __DIR__ . '/includ
 
 // Autoload for each parser function
 $GLOBALS['wgAutoloadClasses']['ManifestDependencies\ManifestDependenciesReport'] = __DIR__ . '/includes/ManifestDependenciesReport.php';
+$GLOBALS['wgAutoloadClasses']['ManifestDependencies\EVAManifestDependencies'] = __DIR__ . '/includes/EVAManifestDependencies.php';
 
 // Setup parser functions
 $GLOBALS['wgHooks']['ParserFirstCallInit'][] = 'ManifestDependencies\Setup::setupParserFunctions';
