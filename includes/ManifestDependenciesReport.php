@@ -44,7 +44,9 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
 
    }
 
-   public function sortNullLast ( $x, $y ) {
+   public function sortNullLast ( $a, $b ) {
+      $x = $a["date"];
+      $y = $b["date"];
       if( $x == $y ){
         return 0;
       } else if ( $x > $y && $y != NULL ){ //neither is NULL
@@ -93,19 +95,21 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       $dependencyArray = explode(';', $dependency); //Split each dependency apart
       foreach ($dependencyArray as &$value) {
          $dependencyArrayPieces = explode(',', $value); //Dependency name,Dependency start date,Dependency dock date
+         $dependencies[$dependencyArrayPieces[0]]["name"] = $dependencyArrayPieces[0];
          if ( $dependencyArrayPieces[1] != NULL ) {
-          $dependencies[$dependencyArrayPieces[0]] = date('Y-m-d', strtotime($dependencyArrayPieces[1]) );
+          $dependencies[$dependencyArrayPieces[0]]["date"] = date('Y-m-d', strtotime($dependencyArrayPieces[1]) );
          } else if ( $dependencyArrayPieces[2] != NULL ) {
-          $dependencies[$dependencyArrayPieces[0]] = date('Y-m-d', strtotime($dependencyArrayPieces[2]) );
+          $dependencies[$dependencyArrayPieces[0]]["date"] = date('Y-m-d', strtotime($dependencyArrayPieces[2]) );
+          $dependencies[$dependencyArrayPieces[0]]["type"] = "crew";
          } else {
-          $dependencies[$dependencyArrayPieces[0]] = $dependencyArrayPieces[1];
+          $dependencies[$dependencyArrayPieces[0]]["date"] = $dependencyArrayPieces[1];
          }
       }
       unset($value);
 
       // User-defined sort to treat NULL as latest date
       uasort( $dependencies, "self::sortNullLast" );
-   
+
       //Format item on manifest to be wiki link
       $itemOnManifestList = explode ( "," , $itemOnManifest );
       $itemOnManifestListModified = array_map (
@@ -118,15 +122,16 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       //LOGIC TO COLOR ROWS
       $rowColor = "transparent";
 
-      foreach ($dependencies as $name => $date) {
+      foreach ($dependencies as $dep ) {
+        $date = $dep["date"];
         $dateTime = strtotime($date);
         if ( $date != NULL && strtotime($date) < strtotime($manifestDockDate) ) {
           $rowColor = "red"; 
-        } else if ( $rowColor != "red" && $date != NULL && strtotime($date) < strtotime( $manifestDockDate ) + strtotime("+$yellowMargin days") ) {
+        } else if ( $rowColor != "red" && $dep["type"] != "crew" && $date != NULL && strtotime($date) < strtotime( $manifestDockDate ) + strtotime("+$yellowMargin days") ) {
           $rowColor = "yellow"; 
         }
       }
-      unset($value);
+      unset($dep);
 
 
 #
@@ -277,34 +282,33 @@ class ManifestDependenciesReport extends ParserFunctionHelper {
       //Dependencies
       $output .= "<td>";
       $i = 1;
-      foreach ($dependencies as $name => $date) {
-         $output .= "[[" . $name . "]]";
-         if ( count($dependencies) > 1 ){
+      foreach ($dependencies as $dep) {
+         $output .= "[[" . $dep["name"] . "]]";
+         if ( count($dep) > 1 ){
             $output .= "<br />";
          }
          $i++;
       }
-      unset($value);
+      unset($dep);
       $output .= "</td>";
 
       //Dependency Dates
       $output .= "<td>";
       $i = 1;
-      foreach ($dependencies as $name => $date) {
-          if( $date ){
-             // $output .= $date;
-            // $dateNew = strtotime($date);
-            $dateNew = strtotime($date);
-             $output .= date('Y-m-d',$dateNew);
-          }else{
-             $output .= "no date";
-          }
-         if ( count($dependencies) > 1 ){
-            $output .= "<br />";
-         }
-         $i++;
+      foreach ($dependencies as $dep) {
+        $date = $dep["date"];
+        if( $date ){
+          $dateNew = strtotime($date);
+           $output .= date('Y-m-d',$dateNew);
+        }else{
+           $output .= "no date";
+        }
+       if ( count($dep) > 1 ){
+          $output .= "<br />";
+       }
+       $i++;
       }
-      unset($value);
+      unset($dep);
       $output .= "</td>";
 
       $output .= "</tr>";
